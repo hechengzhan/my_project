@@ -1,0 +1,12 @@
+.env
+*.pyc
+__pycache__/
+
+backend/venv/
+frontend/node_modules/
+frontend/dist/
+
+rendered_report/
+rendered_run_guide/
+Campus_Agent_项目报告.docx
+Campus_Agent_项目运行说明.docx

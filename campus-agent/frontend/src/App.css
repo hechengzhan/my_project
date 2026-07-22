@@ -1,0 +1,200 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background: #eef6ff;
+  overflow: hidden;
+}
+
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background:
+    radial-gradient(circle at 0 0, rgba(0, 82, 204, 0.24), transparent 30%),
+    radial-gradient(circle at 78% 8%, rgba(75, 151, 255, 0.12), transparent 28%),
+    linear-gradient(135deg, #d9ebff 0%, #edf6ff 44%, #ffffff 100%);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 86px;
+  padding: 10px 0 10px 18px;
+  background: transparent;
+  border-bottom: 1px solid rgba(0, 82, 204, 0.08);
+}
+
+.school-logo {
+  display: block;
+  width: min(500px, 76vw);
+  height: auto;
+  max-height: 70px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: clamp(14px, 3vw, 24px);
+  background: transparent;
+  min-width: 0;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 12px;
+  min-width: 0;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.ai {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: min(720px, 68%);
+  box-sizing: border-box;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  text-align: left;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.message.user .bubble {
+  background: linear-gradient(135deg, #0052cc, #0b74de);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 82, 204, 0.16);
+}
+
+.message.ai .bubble {
+  background: white;
+  border: 1px solid #d6e5ff;
+  color: #182a45;
+  box-shadow: 0 8px 22px rgba(24, 79, 146, 0.07);
+}
+
+.input-box {
+  display: flex;
+  padding: 14px;
+  background: white;
+  border-top: 1px solid #d7e6ff;
+  min-width: 0;
+}
+
+.input-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #bfd6fb;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  color: #1d3354;
+  background: #fbfdff;
+}
+
+.input-box input:focus {
+  border-color: #0b74de;
+  box-shadow: 0 0 0 3px rgba(11, 116, 222, 0.12);
+}
+
+.input-box button {
+  margin-left: 10px;
+  padding: 0 20px;
+  background: #0052cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(0, 82, 204, 0.2);
+}
+
+.input-box button:hover {
+  background: #0b74de;
+}
+
+.empty-state {
+  max-width: 680px;
+  margin: 12vh auto 32px;
+  color: #003c8f;
+  text-align: center;
+}
+
+.empty-state h1 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  letter-spacing: 0;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #536a8c;
+}
+
+.status {
+  color: #536a8c;
+  font-size: 14px;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .bubble {
+    max-width: 88%;
+  }
+
+  .empty-state {
+    margin-top: 8vh;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    min-height: 66px;
+    padding: 8px 0 8px 10px;
+  }
+
+  .school-logo {
+    width: min(360px, 92vw);
+    max-height: 54px;
+  }
+
+  .chat-box {
+    padding: 12px;
+  }
+
+  .bubble {
+    max-width: 94%;
+    font-size: 14px;
+  }
+
+  .input-box {
+    padding: 10px;
+  }
+
+  .input-box button {
+    padding: 0 14px;
+  }
+
+  .empty-state h1 {
+    font-size: 28px;
+  }
+}
