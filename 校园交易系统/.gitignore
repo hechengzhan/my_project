@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+campus_market.db
+uploads/
+frontend/node_modules/
+frontend/dist/
+tmp/
+.DS_Store
+
